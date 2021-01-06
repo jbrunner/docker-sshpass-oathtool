@@ -6,5 +6,9 @@ if [[ -z "${OTP_SECRET}" ]]; then
 else
   export SSHPASS="${OTP_PREFIX}$(oathtool -b --totp $OTP_SECRET)${OTP_SUFFIX}"
 fi
-  
+
+if [[ -n "${DEBUG}" ]; then
+  echo "DEBUG: SSHPASS is ${SSHPASS}"
+fi
+
 exec "$@"
