@@ -14,8 +14,19 @@ Alpine based image provides ssh client, oathtool (for generating TOTP tokens) an
 
 ## Usage
 
+Run ssh client with disabled time drift detection:
+
     docker run \
       --rm \
-      -e OTP_SECRET="" \
+      -e NTP_MAXOFFSET="0" \
+      jb5r/sshpass-oathtool:latest \
+      ssh user@host <command>
+
+Login with TOTP token as Password:
+
+    docker run \
+      --rm \
+      -e OTP_SECRET="Your secret here" \
       jb5r/sshpass-oathtool:latest \
       sshpass -e ssh user@host <command>
+
