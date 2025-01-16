@@ -1,9 +1,12 @@
-name: Publish Docker image
+# Weekly build to pull latest alpine images
+# Paste your workflow YAML to this code editor
+
+name: Weekly Build
 
 on:
-  push:
-    tags:
-      - 'v*'
+  schedule:
+    - cron: "0 0 * * 0"
+
 jobs:
   docker:
     runs-on: ubuntu-latest
