@@ -13,7 +13,6 @@ RUN chmod +x /entrypoint.sh
 ENV OTP_PREFIX=""
 ENV OTP_SECRET=""
 ENV OTP_SUFFIX=""
-# hardcoded for backward compatibility. Will be removed in a future release
 ENV NTP_SERVER="time.google.com"
 ENV NTP_MAXOFFSET="20000"
 ENTRYPOINT ["/entrypoint.sh"]
