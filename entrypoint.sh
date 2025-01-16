@@ -7,7 +7,7 @@ function fail {
 }
 
 if [ "${NTP_MAXOFFSET}" -ne "0" ]; then
-  ./clockoffset -ntpserver "${NTP_SERVER}" \
+  clockoffset -ntpserver "${NTP_SERVER}" \
     -format h \
     -limit "${NTP_MAXOFFSET}" || fail "Error: timedrift exceeds ${NTP_MAXOFFSET}ms"
 fi
