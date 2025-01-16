@@ -9,7 +9,7 @@ function fail {
 if [ "${NTP_MAXOFFSET}" -ne "0" ]; then
   clockoffset -ntpserver "${NTP_SERVER}" \
     -format h \
-    -limit "${NTP_MAXOFFSET}" || fail "Error: timedrift exceeds ${NTP_MAXOFFSET}ms"
+    -limit "${NTP_MAXOFFSET}" || fail "timedrift exceeds ${NTP_MAXOFFSET}ms"
 fi
 
 if [[ -z "${OTP_SECRET}" ]]; then
