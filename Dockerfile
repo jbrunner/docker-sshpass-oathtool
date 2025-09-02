@@ -16,9 +16,6 @@ COPY entrypoint.sh /entrypoint.sh
 COPY --from=builder /go/bin/clockoffset /usr/bin/clockoffset
 RUN chmod +x /entrypoint.sh && chown app:app /entrypoint.sh /usr/bin/clockoffset
 
-ENV OTP_PREFIX=""
-ENV OTP_SECRET=""
-ENV OTP_SUFFIX=""
 ENV NTP_SERVER="time.google.com"
 ENV NTP_MAXOFFSET="20000"
 
