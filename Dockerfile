@@ -9,8 +9,7 @@ RUN apk add --no-cache \
   sshpass \
   oath-toolkit-oathtool
 
-# Create non-root user and group named 'app'
-RUN addgroup -S app && adduser -S app -G app
+RUN addgroup -g 1000 -S app && adduser -u 1000 -S app -G app
 
 COPY entrypoint.sh /entrypoint.sh
 COPY --from=builder /go/bin/clockoffset /usr/bin/clockoffset
