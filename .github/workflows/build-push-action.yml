@@ -16,7 +16,7 @@ jobs:
         with:
           images: ghcr.io/jbrunner/sshpass-oathtool
           tags: |
-            type=ref,event=tag,pattern={{version}}
+            type=semver,event=tag,pattern={{version}}
             type=raw,value=latest
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
