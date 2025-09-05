@@ -15,6 +15,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/jbrunner/sshpass-oathtool
+          tags: |
+            type=ref,event=tag,pattern={{version}},prefix=v
+            type=raw,value=latest
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
