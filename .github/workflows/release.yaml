@@ -29,7 +29,7 @@ jobs:
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@deaa0dee567db6b95038c14152b037af85a8fe3b
+        uses: docker/metadata-action@aa5e42bc43f8889f9507741c435e473300844141
         with:
           images: ghcr.io/jbrunner/sshpass-oathtool
           tags: |
