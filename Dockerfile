@@ -1,7 +1,7 @@
 FROM golang:1.26-alpine AS builder
 RUN go install github.com/jbrunner/clockoffset@latest
 
-FROM alpine:3.24.0
+FROM alpine:3.24.1
 RUN apk add --no-cache \
   openssh-client \
   ca-certificates \
