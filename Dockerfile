@@ -1,4 +1,4 @@
-FROM golang:1.26-alpine AS builder
+FROM golang:1.27-alpine AS builder
 RUN go install github.com/jbrunner/clockoffset@latest
 
 FROM alpine:3.24.1
